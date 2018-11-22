@@ -16,6 +16,8 @@
 		8F0ED6CB21A6C23000BFB58E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F0ED6CA21A6C23000BFB58E /* Assets.xcassets */; };
 		8F0ED6CE21A6C23000BFB58E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0ED6CC21A6C23000BFB58E /* LaunchScreen.storyboard */; };
 		8F0ED6D921A6C23100BFB58E /* BathynomusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0ED6D821A6C23100BFB58E /* BathynomusTests.swift */; };
+		8F6AD1E021A6C7AF000645CB /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6AD1DF21A6C7AF000645CB /* SwiftIconFont.framework */; };
+		8F6AD1E221A6C8F4000645CB /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6AD1E121A6C8F4000645CB /* Rswift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		8F0ED6D421A6C23100BFB58E /* BathynomusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BathynomusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0ED6D821A6C23100BFB58E /* BathynomusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathynomusTests.swift; sourceTree = "<group>"; };
 		8F0ED6DA21A6C23100BFB58E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F6AD1DF21A6C7AF000645CB /* SwiftIconFont.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIconFont.framework; path = Carthage/Build/iOS/SwiftIconFont.framework; sourceTree = "<group>"; };
+		8F6AD1E121A6C8F4000645CB /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F6AD1E221A6C8F4000645CB /* Rswift.framework in Frameworks */,
+				8F6AD1E021A6C7AF000645CB /* SwiftIconFont.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +74,7 @@
 				8F0ED6BC21A6C22F00BFB58E /* Bathynomus */,
 				8F0ED6D721A6C23100BFB58E /* BathynomusTests */,
 				8F0ED6BB21A6C22F00BFB58E /* Products */,
+				8F6AD1DE21A6C7AF000645CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,15 @@
 			path = BathynomusTests;
 			sourceTree = "<group>";
 		};
+		8F6AD1DE21A6C7AF000645CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F6AD1E121A6C8F4000645CB /* Rswift.framework */,
+				8F6AD1DF21A6C7AF000645CB /* SwiftIconFont.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +131,7 @@
 				8F0ED6B621A6C22F00BFB58E /* Sources */,
 				8F0ED6B721A6C22F00BFB58E /* Frameworks */,
 				8F0ED6B821A6C22F00BFB58E /* Resources */,
+				8F6AD1E421A6C912000645CB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -202,6 +219,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F6AD1E421A6C912000645CB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftIconFont.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8F0ED6B621A6C22F00BFB58E /* Sources */ = {
@@ -373,6 +412,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Bathynomus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,6 +433,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Bathynomus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

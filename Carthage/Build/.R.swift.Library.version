@@ -1,0 +1,9 @@
+{
+  "commitish" : "v4.0.0",
+  "iOS" : [
+    {
+      "name" : "Rswift",
+      "hash" : "dcbb0e1a97e26a4fabed6ad705275ddd6421e4201b09498609e7cc9de96ada95"
+    }
+  ]
+}
